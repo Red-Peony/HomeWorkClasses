@@ -113,12 +113,10 @@ class Library extends PrintEditionItem {
 
     giveBookByName(bookName){
         let bookByFind = this.findBookBy('name', bookName).name;
-        console.log("ищу: " + bookByFind);
-        this.books.forEach((item, index) => {
-            console.log(` ${item} + 'имеет позицию' + ${index}`);  
-        });
-        console.log("ищу позицию: " + this.books.lastIndexOf(bookByFind));
-        return this.books.splice(this.books.indexOf(bookByFind), 1);
+        //console.log("ищу: " + bookByFind);
+        
+        //console.log("ищу позицию: " + this.books.findIndex((bookByFind) => bookByFind));
+        return this.books.splice(this.books.findIndex((bookByFind) => bookByFind), 1);
     
         
     }
