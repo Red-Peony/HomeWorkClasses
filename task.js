@@ -112,13 +112,9 @@ class Library extends PrintEditionItem {
     }
 
     giveBookByName(bookName){
-        let bookByFind = this.findBookBy('name', bookName).name;
-        //console.log("ищу: " + bookByFind);
-        
-        //console.log("ищу позицию: " + this.books.findIndex((bookByFind) => bookByFind));
-        return this.books.splice(this.books.findIndex((bookByFind) => bookByFind), 1);
-    
-        
+        const bookByFind = this.findBookBy('name', bookName);
+        this.books.splice(this.books.findIndex((bookByFind) => bookByFind.name === bookName), 1);
+        return bookByFind || null;       
     }
   }
 
